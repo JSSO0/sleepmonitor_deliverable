@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Sono</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #videoContainer {
+            border: 2px solid #333;
+            width: 640px; /* Ajustar conforme necessário */
+            height: 480px; /* Ajustar conforme necessário */
+            background-color: #000;
+            margin-bottom: 20px;
+            position: relative; /* Para posicionar o status dentro */
+        }
+        video {
+            display: block; /* Remove espaço extra abaixo do vídeo */
+            width: 100%;
+            height: 100%;
+        }
+        #statusArea {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monitoramento de Sono</h1>
+    <div id="videoContainer">
+        <video id="webcamFeed" autoplay playsinline></video>
+        <div id="statusArea">Status: Aguardando início...</div>
+    </div>
+    <button id="startButton">Iniciar Monitoramento</button>
+
+    <script src="{% static 'sleep_monitor/js/main.js' %}"></script> {# Ajustar o caminho se necessário #}
+</body>
+</html>
